@@ -4,8 +4,7 @@ const router = express.Router()
 
 let cards = [
   {
-    title: 'This is the first title',
-    body: 'loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+    text: 'loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
     author: 'Peter',
     votes: 0,
     id: '1',

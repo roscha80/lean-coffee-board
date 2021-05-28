@@ -15,10 +15,9 @@ POST http://localhost:4000/api/cards
 Content-Type: application/json
 
 {
-  "title": "This should be the first title",
-  "body": "loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
-  "author": users[0]
-  "votes": 0,
+  "text": "loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+  "author": "Peter",
+  "votes": 0
 }
 
 ### PATCH /api/cards/1
@@ -26,8 +25,7 @@ PATCH {{baseUrl}}/api/cards/1
 Content-Type: application/json
 
 {
-  "title": "This should change the title",
-  "body": "And now the body should be different"
+  "text": "And now the body should be different"
 }
 
 ### DELETE /api/users/1

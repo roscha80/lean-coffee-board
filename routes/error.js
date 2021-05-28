@@ -1,3 +1,4 @@
 module.exports = (err, req, res, next) => {
-  res.status(err.status).json({ error: err })
+  err && res.status(err.status)
+  res.json({ error: err })
 }
