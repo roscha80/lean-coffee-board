@@ -1,46 +1,28 @@
 const express = require('express')
-const uuidv4 = require('uuid').v4
 const router = express.Router()
+const Card = require('../models/Card')
 
-let cards = [
-  {
-    text: 'loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
-    author: 'Peter',
-    votes: 0,
-    id: '1',
-  },
-]
-
-router.get('/', (req, res, next) => {
-  res.json(cards)
+router.get('/', async (req, res, next) => {
+  res.json(await Card.find())
 })
 
-router.get('/', (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
   const { id } = req.params
-  const foundCards = cards.find(card => card.id === id)
-  foundCards ? res.json(foundCards) : next()
+  res.json(await Card.findById(id))
 })
 
-router.get('/', (req, res, next) => {
-  const newCard = { ...req.body, id: uuidv4() }
-  cards.push(newCard)
-  res.status(201).json(newCard)
+router.post('/', async (req, res, next) => {
+  res.status(201).json(await Card.create(req.body))
 })
 
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id', async (req, res, next) => {
   const { id } = req.params
-
-  const index = cards.findIndex(card => card.id === id)
-  const card = card[index]
-  const updateCard = { ...card, ...req.body }
-  cards.splice(index, 1, updateCard)
-  res.json(updateCard)
+  res.json(await Card.findByIdAndUpdate(id, req.body, { new: true }))
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
   const { id } = req.params
-  cards = cards.filter(card => card.id !== id)
-  res.sendStatus(204)
+  res.sendStatus(204).json(await Card.findByIdAndDelete(id))
 })
 
 module.exports = router

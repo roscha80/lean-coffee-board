@@ -16,7 +16,7 @@ Content-Type: application/json
 
 {
   "text": "loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
-  "author": "Peter",
+  "author": "Martin",
   "votes": 0
 }
 
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### DELETE /api/users/1
-DELETE {{baseUrl}}/api/cards/1
+DELETE {{baseUrl}}/api/cards/60b0fef249ae2490dc127232
