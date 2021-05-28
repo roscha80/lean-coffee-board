@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:4000
+
+
+### GET /cards
+GET {{baseUrl}}/api/cards
+
+### GET /api/cards/:id
+GET {{baseUrl}}/api/cards/1
+
+### GET /api/cards/2000 (should not be found)
+GET {{baseUrl}}/api/cards/2000
+
+### POST /api/cards
+POST http://localhost:4000/api/cards
+Content-Type: application/json
+
+{
+  "title": "This should be the first title",
+  "body": "loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+  "author": users[0]
+  "votes": 0,
+}
+
+### PATCH /api/cards/1
+PATCH {{baseUrl}}/api/cards/1
+Content-Type: application/json
+
+{
+  "title": "This should change the title",
+  "body": "And now the body should be different"
+}
+
+### DELETE /api/users/1
+DELETE {{baseUrl}}/api/cards/1
