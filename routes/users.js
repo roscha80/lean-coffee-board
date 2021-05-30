@@ -20,9 +20,9 @@ router.patch('/:id', async (req, res, next) => {
   res.json(await User.findByIdAndUpdate(id, req.body, { new: true }))
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
   const { id } = req.params
-  res.status(204).json(User.findByIdAndDelete(id))
+  res.status(204).json(await User.findByIdAndDelete(id))
 })
 
 module.exports = router

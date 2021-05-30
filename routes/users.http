@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### DELETE /api/users/1
-DELETE {{baseUrl}}/api/users/1
+DELETE {{baseUrl}}/api/users/60b101dc42718e9239c94e11
