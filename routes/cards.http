@@ -16,7 +16,7 @@ Content-Type: application/json
 
 {
   "text": "loremLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
-  "author": "Martin",
+  "author": "Peter",
   "votes": 0
 }
 
