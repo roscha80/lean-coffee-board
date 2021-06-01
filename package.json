@@ -13,7 +13,9 @@
     "build:read-users": "npm run shebang:read-users && npm run chmod:read-users",
     "shebang:read-users": "echo '#!/usr/bin/env node' > bin/read-users && cat read-users.js >> bin/read-users",
     "chmod:read-users": "chmod +x bin/read-users",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "Rob Schade",
@@ -23,9 +25,16 @@
     "mongodb": "3.6.9",
     "mongoose": "^5.12.11",
     "morgan": "1.10.0",
+    "react": "^17.0.2",
     "uuid": "8.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "^8.2.2",
     "nodemon": "2.0.7"
   }
 }
