@@ -3,12 +3,12 @@ const router = express.Router()
 const Card = require('../models/Card')
 
 router.get('/', async (req, res, next) => {
-  res.json(await Card.find())
+  res.json(await Card.find().populate('author', 'name -_id'))
 })
 
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params
-  res.json(await Card.findById(id))
+  res.json(await Card.findById(id).populate('author', 'name -_id'))
 })
 
 router.post('/', async (req, res, next) => {
